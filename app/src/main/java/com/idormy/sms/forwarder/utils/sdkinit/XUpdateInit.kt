@@ -2,7 +2,6 @@ package com.idormy.sms.forwarder.utils.sdkinit
 
 import android.app.Application
 import android.content.Context
-import com.idormy.sms.forwarder.utils.KEY_UPDATE_URL
 import com.idormy.sms.forwarder.utils.update.CustomUpdateDownloader
 import com.idormy.sms.forwarder.utils.update.CustomUpdateFailureListener
 import com.idormy.sms.forwarder.utils.update.XHttpUpdateHttpServiceImpl
@@ -45,23 +44,8 @@ class XUpdateInit private constructor() {
          * 进行版本更新检查
          */
         fun checkUpdate(context: Context, needErrorTip: Boolean) {
-            checkUpdate(context, KEY_UPDATE_URL, needErrorTip)
         }
 
-        /**
-         * 进行版本更新检查
-         *
-         * @param context      上下文
-         * @param url          版本更新检查的地址
-         * @param needErrorTip 是否需要错误的提示
-         */
-        private fun checkUpdate(context: Context, url: String, needErrorTip: Boolean) {
-            if (StringUtils.isEmpty(url)) {
-                return
-            }
-            XUpdate.newBuild(context).updateUrl(url).update()
-            XUpdate.get().setOnUpdateFailureListener(CustomUpdateFailureListener(needErrorTip))
-        }
     }
 
     init {

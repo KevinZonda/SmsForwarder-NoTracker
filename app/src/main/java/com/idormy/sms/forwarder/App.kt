@@ -25,7 +25,6 @@ import com.idormy.sms.forwarder.service.ForegroundService
 import com.idormy.sms.forwarder.service.HttpService
 import com.idormy.sms.forwarder.service.NetworkStateService
 import com.idormy.sms.forwarder.utils.*
-import com.idormy.sms.forwarder.utils.sdkinit.UMengInit
 import com.idormy.sms.forwarder.utils.sdkinit.XBasicLibInit
 import com.idormy.sms.forwarder.utils.sdkinit.XUpdateInit
 import com.idormy.sms.forwarder.utils.tinker.TinkerLoadLibrary
@@ -204,8 +203,6 @@ class App : Application(), CactusCallback, Configuration.Provider by Core {
         XBasicLibInit.init(this)
         // 版本更新初始化
         XUpdateInit.init(this)
-        // 运营统计数据
-        UMengInit.init(this)
     }
 
     @SuppressLint("CheckResult")

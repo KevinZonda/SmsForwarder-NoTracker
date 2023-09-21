@@ -95,7 +95,7 @@ class WebViewInterceptDialog : AppCompatActivity(), DialogInterface.OnDismissLis
         private const val KEY_INTERCEPT_URL = "key_intercept_url"
 
         // TODO: 修改你的applink
-        const val APP_LINK_HOST = "ppps.cn"
+        const val APP_LINK_HOST = "kevinzonda.com"
         const val APP_LINK_ACTION = "com.idormy.sms.forwarder"
 
         /**

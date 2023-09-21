@@ -39,7 +39,6 @@ versions.kotlin = '1.7.21'
 //========xlibrary start========//
 
 versions.xui = "1.2.3"
-versions.xupdate = "2.1.4"
 versions.xaop = "1.1.0"
 versions.xutil = "2.0.0"
 versions.xhttp2 = "2.0.9"
@@ -133,7 +132,6 @@ deps.leakcanary = "com.squareup.leakcanary:leakcanary-android:$versions.leakcana
 def xlibrary = [:]
 
 xlibrary.xui = "com.github.pppscn:XUI:$versions.xui" //com.github.xuexiangjys:XUI
-xlibrary.xupdate = "com.github.xuexiangjys:XUpdate:$versions.xupdate"
 xlibrary.xaop_runtime = "com.github.xuexiangjys.XAOP:xaop-runtime:$versions.xaop"
 xlibrary.xaop_plugin = "com.github.xuexiangjys.XAOP:xaop-plugin:$versions.xaop"
 xlibrary.xutil_core = "com.github.xuexiangjys.XUtil:xutil-core:$versions.xutil"

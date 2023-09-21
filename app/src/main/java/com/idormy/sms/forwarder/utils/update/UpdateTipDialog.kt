@@ -1,7 +1,6 @@
 package com.idormy.sms.forwarder.utils.update
 
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
@@ -9,7 +8,6 @@ import com.idormy.sms.forwarder.R
 import com.idormy.sms.forwarder.utils.CommonUtils.Companion.goWeb
 import com.xuexiang.xui.utils.ResUtils
 import com.xuexiang.xui.widget.dialog.DialogLoader
-import com.xuexiang.xupdate.XUpdate
 
 /**
  * 版本更新提示弹窗
@@ -52,10 +50,6 @@ class UpdateTipDialog : AppCompatActivity(), DialogInterface.OnDismissListener {
          */
         @JvmStatic
         fun show(content: String?) {
-            val intent = Intent(XUpdate.getContext(), UpdateTipDialog::class.java)
-            intent.putExtra(KEY_CONTENT, content)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-            XUpdate.getContext().startActivity(intent)
         }
     }
 }

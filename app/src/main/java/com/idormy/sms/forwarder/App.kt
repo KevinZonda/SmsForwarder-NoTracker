@@ -26,7 +26,6 @@ import com.idormy.sms.forwarder.service.HttpService
 import com.idormy.sms.forwarder.service.NetworkStateService
 import com.idormy.sms.forwarder.utils.*
 import com.idormy.sms.forwarder.utils.sdkinit.XBasicLibInit
-import com.idormy.sms.forwarder.utils.sdkinit.XUpdateInit
 import com.idormy.sms.forwarder.utils.tinker.TinkerLoadLibrary
 import com.xuexiang.xutil.app.AppUtils
 import io.reactivex.Observable
@@ -201,8 +200,6 @@ class App : Application(), CactusCallback, Configuration.Provider by Core {
         HistoryUtils.init(applicationContext)
         // X系列基础库初始化
         XBasicLibInit.init(this)
-        // 版本更新初始化
-        XUpdateInit.init(this)
     }
 
     @SuppressLint("CheckResult")

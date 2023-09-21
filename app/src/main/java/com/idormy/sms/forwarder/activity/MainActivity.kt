@@ -31,7 +31,6 @@ import com.idormy.sms.forwarder.databinding.ActivityMainBinding
 import com.idormy.sms.forwarder.fragment.*
 import com.idormy.sms.forwarder.service.ForegroundService
 import com.idormy.sms.forwarder.utils.*
-import com.idormy.sms.forwarder.utils.sdkinit.XUpdateInit
 import com.idormy.sms.forwarder.widget.GuideTipsDialog.Companion.showTips
 import com.idormy.sms.forwarder.widget.GuideTipsDialog.Companion.showTipsForce
 import com.jeremyliao.liveeventbus.LiveEventBus
@@ -147,7 +146,6 @@ class MainActivity : BaseActivity<ActivityMainBinding?>(),
         //仅当有WIFI网络时自动检查更新/获取提示
         if (NetworkUtils.isWifi() && NetworkUtils.isHaveInternet()) {
             showTips(this)
-            XUpdateInit.checkUpdate(this, false)
         }
     }
 

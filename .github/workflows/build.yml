@@ -18,9 +18,23 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: 11
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: 'android_keystore.jks'
+          fileDir: 'app/keystore/'
+          encodedString: ${{ secrets.SIGN_KEY }}
+      
       # 打包release
       - name: Build with Gradle
         run: bash ./gradlew assembleRelease
+        env:
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGN_ALIAS }}
+          SIGNING_KEY_PASSWD: ${{ secrets.SIGN_PASSWD }}
+          SIGNING_KEY_SPASS: ${{ secrets.SIGN_PASSWD }}
+          SIGNING_KEY_FILE: 'keystore/android_keystore.jks'
+
       # 存档打包的文件
       - name: Archive production artifacts
         uses: actions/upload-artifact@v3
